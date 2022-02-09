@@ -5,12 +5,14 @@ class LibraryParser {
     constructor(filePath) {
         const options = {
             ignoreAttributes: false,
-            allowBooleanAttributes: true
+            allowBooleanAttributes: true,
+            processEntities: false
         };
         this.parser = new xmlparser.XMLParser(options);
         const builderOptions = {
             ignoreAttributes : false,
             format: true,
+            processEntities: false
         };
 
         this.builder = new xmlparser.XMLBuilder(builderOptions);
