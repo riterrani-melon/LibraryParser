@@ -16,7 +16,9 @@ const libraryParser = new LibraryParser(filePath);
 
 const newXml = libraryParser.getXmlWithoutPage(pageId);
 
-fs.writeFileSync("library-without-" + pageId + ".xml", newXml);
+const filename = "library-without-" + pageId + ".xml";
+fs.writeFileSync(filename, newXml);
+console.log('Generated ' + filename);
 
 
 // @see https://github.com/NaturalIntelligence/fast-xml-parser

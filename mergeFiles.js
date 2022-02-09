@@ -19,7 +19,9 @@ const nodesToCopy = pageFileParser.getAllNodes();
 libraryParser.addNodes(nodesToCopy);
 const newXml = libraryParser.getOutputXml();
 
-fs.writeFileSync("merged-library.xml", newXml);
+const filename = "merged-library.xml";
+fs.writeFileSync(filename, newXml);
+console.log('Generated ' + filename);
 
 
 // @see https://github.com/NaturalIntelligence/fast-xml-parser

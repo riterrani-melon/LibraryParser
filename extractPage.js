@@ -13,11 +13,11 @@ const filePath = myArgs[0];
 const pageId = myArgs[1];
 
 const libraryParser = new LibraryParser(filePath);
-console.log(libraryParser.xmlData);
 const relatedNodes = libraryParser.getPageNodes(pageId);
 const newXml = libraryParser.getXmlWithNodes(relatedNodes);
 
-fs.writeFileSync(pageId + '.xml', newXml);
-
+const filename = pageId + '.xml';
+fs.writeFileSync(filename, newXml);
+console.log('Generated ' + filename);
 
 // @see https://github.com/NaturalIntelligence/fast-xml-parser
