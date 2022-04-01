@@ -47,6 +47,7 @@ class LibraryParser {
     getContentLinksNodes(node) {
         let nodes = [];
         let contentLinks = node['content-links'] && node['content-links']['content-link'] ? node['content-links']['content-link'] : [];
+        contentLinks = Array.isArray(contentLinks) ? contentLinks : [contentLinks]
         if (contentLinks.length) {
             for (const contentLink of contentLinks) {
                 const contentId = contentLink['@_content-id'];
