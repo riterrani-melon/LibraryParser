@@ -62,7 +62,11 @@ class LibraryParser {
 
     getXmlWithNodes(nodes) {
         var newData = { ...this.xmlData };
-        newData.library = {content: nodes};
+        newData.library = {
+            content: nodes,
+            '@_xmlns': newData.library['@_xmlns'],
+            '@_library-id': newData.library['@_library-id']
+        };
 
         return this.builder.build(newData);
     }
